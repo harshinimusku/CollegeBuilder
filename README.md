@@ -59,6 +59,36 @@ When configured, Gemini has two uses:
 2. Write explanations for the nine colleges already selected
 
 Gemini does **not** choose, add, remove, reorder, score, or classify colleges. If the narrative call fails or returns colleges in the wrong order, the app uses deterministic template explanations.
+## Environment variables
+
+Create a local `.env` file in the project root before starting the application.
+
+You can copy the provided template:
+
+```bash
+cp .env.example .env
+```
+
+Then add your API keys:
+
+```env
+# Free Gemini API key used to interpret free-form student descriptions
+GEMINI_API_KEY=
+
+# Gemini model used by the application
+GEMINI_MODEL=gemini-3.6-flash
+
+# Free data.gov API key used to access College Scorecard data
+COLLEGE_SCORECARD_API_KEY=
+
+# Local server port
+PORT=3000
+```
+
+### Getting the API keys
+
+* `GEMINI_API_KEY`: Create a free Gemini API key through Google AI Studio.
+* `COLLEGE_SCORECARD_API_KEY`: Request a free data.gov API key for the College Scorecard API.
 
 ## Frontend structure
 
